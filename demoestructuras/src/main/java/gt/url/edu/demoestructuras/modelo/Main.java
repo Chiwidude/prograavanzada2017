@@ -1,41 +1,23 @@
 package gt.url.edu.demoestructuras.modelo;
 
-import gt.url.edu.demoestructuras.ds.ArrayQueue;
-import gt.url.edu.demoestructuras.ds.Queue;
-import gt.url.edu.demoestructuras.ds.Stack;
-import gt.url.edu.demoestructuras.listas.CircularLinkedList;
-import gt.url.edu.demoestructuras.listas.DoubleLinkedList;
-import gt.url.edu.demoestructuras.listas.LinkedList;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Comparator;
+
+import gt.url.edu.demoestructuras.graphviz.DemoGraphviz;
+import gt.url.edu.demoestructuras.graphviz.FileLoader;
+import gt.url.edu.demoestructuras.ordenamiento.DefaultComparator;
+import gt.url.edu.demoestructuras.ordenamiento.IntComparator;
+import gt.url.edu.demoestructuras.ordenamiento.MergeSorter;
+import gt.url.edu.demoestructuras.ordenamiento.StringLengthComparator;
 
 public class Main {
 
-	public static void main(String[] args) {
-//		Stack<String> laPila = new LinkedList<>();
-//		
-//		laPila.push("Hola");
-//		laPila.push("Panchito");
-//		laPila.push("Mundo");
-//		laPila.push("Como estas");
-//		
-//		String valor = null;
-//		do {
-//			valor = laPila.pop();
-//			System.out.println(valor);
-//		} while (valor != null);
+	public static void main(String[] args) throws IOException {
+		FileLoader fileReader = new FileLoader();
+		fileReader.loadFileWithJava8();
 		
-		Queue<String> laCola = new ArrayQueue<>();
-		
-		laCola.enqueue("Hola");
-		laCola.enqueue("Mundo");
-		laCola.enqueue("Panchito");
-		laCola.enqueue("Lo mismo");
-		
-		String valor = null;
-		do {
-			valor = laCola.dequeue();
-			System.out.println(valor);
-		} while (valor != null);
-		
+		fileReader.writeUsingFileWriter("Nos vemos a la salida");
 		
 	}
 	
